@@ -1,22 +1,319 @@
 <!DOCTYPE html>
-<html lang="nl">
+<html lang="nl" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeanine & Timo gaan trouwen!</title>
+    <title>JEANINE + TIMO | THE LIVE FOREVER SHOW</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#002c54',
+                        wine: '#a94c49',
+                        offwhite: '#fdfbf7',
+                    },
+                    fontFamily: {
+                        heading: ['Space Grotesk', 'sans-serif'],
+                        body: ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            padding: 50px;
-            background-color: #f9f9f9;
+            background-color: #fdfbf7;
+            color: #002c54;
+            font-family: 'Plus Jakarta Sans', sans-serif;
         }
-        h1 { color: #333; }
-        p { font-size: 1.2em; color: #666; }
+        
+        h1, h2, h3, h4, .font-heading {
+            font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Subtiele textuur & accenten */
+        .card-shadow {
+            box-shadow: 0 10px 30px -10px rgba(0, 44, 84, 0.08);
+        }
+
+        .btn-wine {
+            background-color: #a94c49;
+            color: #ffffff;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn-wine:hover {
+            background-color: #8c3d3a;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(169, 76, 73, 0.3);
+        }
+
+        .btn-navy-outline {
+            border: 2px solid #002c54;
+            color: #002c54;
+            transition: all 0.2s ease-in-out;
+        }
+
+        .btn-navy-outline:hover {
+            background-color: #002c54;
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
     </style>
 </head>
-<body>
-    <h1>Jeanine & Timo gaan trouwen! 💍</h1>
-    <p>Welkom op onze bruiloftspagina. Meer informatie volgt snel!</p>
+<body class="min-h-screen flex flex-col justify-between antialiased">
+
+    <!-- HERO / HEADER SECTION -->
+    <header class="pt-12 pb-8 px-4 text-center">
+        <div class="max-w-4xl mx-auto">
+            
+            <!-- Monogram Logo J + T met Sparkles SVG -->
+            <div class="inline-block mb-6 text-navy">
+                <svg width="120" height="90" viewBox="0 0 120 90" fill="none" xmlns="http://www.w3.org/2000/svg" class="mx-auto">
+                    <!-- Sparkles / Vonken -->
+                    <path d="M22 28C22 20 18 16 18 16C18 16 22 12 22 4C22 12 26 16 26 16C26 16 22 20 22 28Z" fill="#002c54"/>
+                    <circle cx="10" cy="14" r="2.5" fill="#002c54"/>
+                    <circle cx="28" cy="38" r="2" fill="#002c54"/>
+                    
+                    <!-- Handgetekende Monogram stijl J + T -->
+                    <text x="35" y="65" font-family="'Space Grotesk', sans-serif" font-weight="700" font-size="44" fill="#002c54" letter-spacing="-1">J+T</text>
+                </svg>
+            </div>
+
+            <!-- Hoofdtitels -->
+            <h1 class="text-4xl md:text-6xl font-bold tracking-tight text-navy uppercase mb-2">
+                Jeanine + Timo
+            </h1>
+            
+            <p class="text-xl md:text-2xl font-bold tracking-widest text-wine uppercase mb-6">
+                The Live Forever Show ⚡
+            </p>
+
+            <!-- Datum & Locatie Badge -->
+            <div class="inline-block bg-wine text-white text-sm md:text-base font-semibold px-6 py-2.5 rounded-full uppercase tracking-wider shadow-md mb-6">
+                Zaterdag 22 Mei 2027 • Rotterdam
+            </div>
+
+            <!-- Sfeervolle Quote -->
+            <p class="text-base md:text-lg text-navy/80 max-w-xl mx-auto font-medium italic">
+                "Geen stijve bedoening, wél een onvergetelijk feestje aan de Kralingse Plas."
+            </p>
+        </div>
+    </header>
+
+    <!-- MAIN CONTENT -->
+    <main class="flex-grow max-w-4xl w-full mx-auto px-4 py-6 space-y-12">
+
+        <!-- COUNTDOWN TIMER SECTION -->
+        <section class="bg-white rounded-3xl p-6 md:p-8 border border-navy/10 card-shadow text-center">
+            <h2 class="text-xs uppercase tracking-widest text-navy/60 font-bold mb-4">De deuren openen over</h2>
+            <div id="countdown" class="grid grid-cols-4 gap-2 md:gap-4 max-w-lg mx-auto">
+                <div class="bg-offwhite p-3 md:p-4 rounded-2xl border border-navy/5">
+                    <span id="days" class="block text-2xl md:text-4xl font-bold text-navy font-heading">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-wider text-navy/60 font-semibold">Dagen</span>
+                </div>
+                <div class="bg-offwhite p-3 md:p-4 rounded-2xl border border-navy/5">
+                    <span id="hours" class="block text-2xl md:text-4xl font-bold text-navy font-heading">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-wider text-navy/60 font-semibold">Uren</span>
+                </div>
+                <div class="bg-offwhite p-3 md:p-4 rounded-2xl border border-navy/5">
+                    <span id="minutes" class="block text-2xl md:text-4xl font-bold text-navy font-heading">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-wider text-navy/60 font-semibold">Minuten</span>
+                </div>
+                <div class="bg-offwhite p-3 md:p-4 rounded-2xl border border-navy/5">
+                    <span id="seconds" class="block text-2xl md:text-4xl font-bold text-navy font-heading">00</span>
+                    <span class="text-[10px] md:text-xs uppercase tracking-wider text-navy/60 font-semibold">Sec</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- PRE-REGISTRATIE / SURVEY CONTAINER SECTION -->
+        <section id="survey" class="bg-navy text-white rounded-3xl p-8 md:p-12 text-center relative overflow-hidden card-shadow">
+            <!-- Subtiel decoratief achtergrondelement -->
+            <div class="absolute -right-12 -bottom-12 w-48 h-48 bg-wine/20 rounded-full blur-2xl pointer-events-none"></div>
+            
+            <div class="relative z-10 max-w-2xl mx-auto space-y-6">
+                <span class="bg-white/10 text-white text-xs font-bold uppercase tracking-widest px-4 py-1.5 rounded-full inline-block">
+                    Pre-registratie
+                </span>
+                <h2 class="text-2xl md:text-4xl font-bold font-heading">
+                    Ben jij erbij op 22 mei 2027?
+                </h2>
+                <p class="text-white/80 text-sm md:text-base leading-relaxed">
+                    Onze <strong>Live Forever Show</strong> vindt plaats in Rotterdam! Pre-registreer je aanwezigheid en geef alvast je adresgegevens door, zodat de officiële festivalpass straks bij jou op de mat valt.
+                </p>
+
+                <!-- SPOTLER SURVEY INTEGRATIE AREA -->
+                <!-- Gebruik de knop hieronder OF vervang deze container door de iframe/script code van Spotler -->
+                <div class="pt-4">
+                    <a href="#survey-form" onclick="scrollToForm()" class="btn-wine inline-flex items-center justify-center font-heading font-bold text-base px-8 py-4 rounded-2xl w-full sm:w-auto text-center cursor-pointer">
+                        Pre-registreer je aanwezigheid nu 🎟️
+                    </a>
+                </div>
+
+                <!-- Optionele placeholder plek voor direct embedded Spotler Formulier -->
+                <!-- 
+                <div id="spotler-embed-container" class="mt-6 bg-white text-navy p-6 rounded-2xl text-left">
+                    [ Plak hier eventueel de Spotler Embed Code ]
+                </div> 
+                -->
+            </div>
+        </section>
+
+        <!-- PRAKTISCHE INFO CARDS -->
+        <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <!-- Card 1: Locatie -->
+            <div class="bg-white rounded-3xl p-6 border border-navy/10 card-shadow flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="w-10 h-10 rounded-2xl bg-offwhite flex items-center justify-center text-xl">📍</div>
+                    <h3 class="text-xl font-bold text-navy font-heading">De Locatie</h3>
+                    <p class="text-sm text-navy/70 leading-relaxed">
+                        <strong>De Serre aan de Plas</strong><br>
+                        De Tuin van de Vier Windstreken<br>
+                        Kralingse Plas, Rotterdam
+                    </p>
+                </div>
+                <span class="text-xs font-semibold text-wine uppercase tracking-wider">Uitzicht op het water 🌿</span>
+            </div>
+
+            <!-- Card 2: Tijd -->
+            <div class="bg-white rounded-3xl p-6 border border-navy/10 card-shadow flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="w-10 h-10 rounded-2xl bg-offwhite flex items-center justify-center text-xl">⏰</div>
+                    <h3 class="text-xl font-bold text-navy font-heading">De Tijd</h3>
+                    <p class="text-sm text-navy/70 leading-relaxed">
+                        <strong>Save the day & night</strong><br>
+                        Blok de hele zaterdag in je agenda. De exacte line-up & tijden volgen!
+                    </p>
+                </div>
+                <span class="text-xs font-semibold text-wine uppercase tracking-wider">Zaterdag 22 Mei 2027</span>
+            </div>
+
+            <!-- Card 3: Vibe -->
+            <div class="bg-white rounded-3xl p-6 border border-navy/10 card-shadow flex flex-col justify-between space-y-4">
+                <div class="space-y-2">
+                    <div class="w-10 h-10 rounded-2xl bg-offwhite flex items-center justify-center text-xl">🕺</div>
+                    <h3 class="text-xl font-bold text-navy font-heading">Vibe & Dresscode</h3>
+                    <p class="text-sm text-navy/70 leading-relaxed">
+                        <strong>Festival Chic</strong><br>
+                        Comfortabel genoeg om te dansen, stijlvol genoeg voor de foto's.
+                    </p>
+                </div>
+                <span class="text-xs font-semibold text-wine uppercase tracking-wider">Dansschoenen verplicht 🪩</span>
+            </div>
+        </section>
+
+        <!-- INTERACTIVE FEATURES (AGENDA & SPOTIFY) -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4">
+            
+            <!-- Save To Calendar Box -->
+            <div class="bg-white rounded-3xl p-6 border border-navy/10 card-shadow text-center flex flex-col justify-center items-center space-y-4">
+                <div class="text-3xl">📅</div>
+                <h3 class="text-lg font-bold text-navy font-heading">Vergeet de datum niet</h3>
+                <p class="text-xs text-navy/70 max-w-xs">
+                    Zet 22 mei 2027 alvast direct met één klik in je persoonlijke digitale agenda.
+                </p>
+                <button onclick="downloadCalendarEvent()" class="btn-navy-outline text-xs font-bold px-5 py-3 rounded-xl uppercase tracking-wider font-heading">
+                    + Voeg toe aan Agenda
+                </button>
+            </div>
+
+            <!-- Spotify Pre-Show Teaser -->
+            <div class="bg-white rounded-3xl p-6 border border-navy/10 card-shadow text-center flex flex-col justify-center items-center space-y-4">
+                <div class="text-3xl">🎧</div>
+                <h3 class="text-lg font-bold text-navy font-heading">Pre-Show Playlist</h3>
+                <p class="text-xs text-navy/70 max-w-xs">
+                    Kom alvast in de stemming voor de Live Forever Show met onze warming-up setlist.
+                </p>
+                <a href="https://open.spotify.com" target="_blank" rel="noopener noreferrer" class="btn-navy-outline text-xs font-bold px-5 py-3 rounded-xl uppercase tracking-wider font-heading inline-block">
+                    Beluister op Spotify 🎵
+                </a>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="mt-16 border-t border-navy/10 py-10 px-4 text-center bg-white/50">
+        <div class="max-w-4xl mx-auto space-y-3">
+            <p class="font-heading font-bold text-navy uppercase text-sm tracking-widest">
+                "Pull up the banners & turn up the music." ⚡
+            </p>
+            <p class="text-xs text-navy/50 font-medium">
+                Jeanine & Timo • 22 Mei 2027 • De Serre, Rotterdam
+            </p>
+        </div>
+    </footer>
+
+    <!-- JAVASCRIPT: COUNTDOWN TIMER & CALENDAR EVENT -->
+    <script>
+        // 1. COUNTDOWN TIMER LOGICA
+        const weddingDate = new Date("May 22, 2027 14:00:00").getTime();
+
+        function updateCountdown() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<div class='col-span-4 text-lg font-bold text-wine font-heading'>HET FEEST IS BEGONNEN! 🎉</div>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            document.getElementById("days").innerText = days < 10 ? '0' + days : days;
+            document.getElementById("hours").innerText = hours < 10 ? '0' + hours : hours;
+            document.getElementById("minutes").innerText = minutes < 10 ? '0' + minutes : minutes;
+            document.getElementById("seconds").innerText = seconds < 10 ? '0' + seconds : seconds;
+        }
+
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // 2. SCROLL NAAR SURVEY
+        function scrollToForm() {
+            // Als je direct wil linken naar een Spotler pagina/survey, vervang dit met window.location.href = "JOUW_SPOTLER_URL";
+            alert("Hier kun je doorlinken naar jullie Spotler survey of het ingebedde formulier direct tonen!");
+        }
+
+        // 3. GENEREEER EN DOWNLOAD .ICS AGENDAPUNT
+        function downloadCalendarEvent() {
+            const icsData = 
+`BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Jeanine en Timo//Bruiloft//NL
+BEGIN:VEVENT
+SUMMARY:Jeanine + Timo: The Live Forever Show ⚡
+DESCRIPTION:Bruiloft van Jeanine & Timo! De Serre aan de Plas, Rotterdam.
+LOCATION:De Tuin van de Vier Windstreken, Plaszoom 500, 3062 CL Rotterdam
+DTSTART:20270522T120000Z
+DTEND:20270523T000000Z
+STATUS:CONFIRMED
+END:VEVENT
+END:VCALENDAR`;
+
+            const blob = new Blob([icsData], { type: 'text/calendar;charset=utf-8;' });
+            const link = document.createElement('a');
+            link.href = window.URL.createObjectURL(blob);
+            link.setAttribute('download', 'Jeanine_en_Timo_22Mei2027.ics');
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    </script>
 </body>
 </html>
