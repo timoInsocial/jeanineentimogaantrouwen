@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jeanine + Timo</title>
+    <title>JEANINE + TIMO | THE LIVE FOREVER SHOW</title>
     
     <!-- Google Fonts: Lato (Light 300, Regular 400, Bold 700, Black 900) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -35,18 +35,14 @@
             background-color: #fdfbf7;
             color: #002c54;
             font-family: 'Lato', sans-serif;
-            font-weight: 300; /* Lato Light voor de body */
+            font-weight: 300;
         }
         
         h1, h2, h3, h4, .font-heading {
             font-family: 'Lato', sans-serif;
-            font-weight: 900; /* Lato Black voor krachtige koppen */
+            font-weight: 900;
             text-transform: uppercase;
             letter-spacing: 0.05em;
-        }
-
-        .card-shadow {
-            box-shadow: 0 10px 30px -10px rgba(0, 44, 84, 0.08);
         }
 
         .btn-wine {
@@ -59,7 +55,7 @@
         .btn-wine:hover {
             background-color: #8c3d3a;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(169, 76, 73, 0.3);
+            box-shadow: 0 6px 20px rgba(169, 76, 73, 0.25);
         }
 
         .btn-navy-outline {
@@ -78,90 +74,83 @@
 </head>
 <body class="min-h-screen flex flex-col justify-between antialiased">
 
-    <!-- HERO / HEADER SECTION -->
-    <header class="pt-12 pb-8 px-4 text-center">
-        <div class="max-w-4xl mx-auto">
+    <!-- HERO & MAIN SECTION (EÉN STRIKT MINIMALISTISCH GEHEEL) -->
+    <main class="pt-12 pb-8 px-4 text-center max-w-2xl mx-auto w-full my-auto">
+        
+        <!-- J+T Header Afbeelding -->
+        <div class="mb-6">
+            <img src="J+T Header.png" alt="Jeanine + Timo Logo" class="mx-auto h-20 md:h-28 w-auto object-contain">
+        </div>
 
-            <!-- Afbeelding Header Logo -->
-            <div class="mb-6">
-                <img src="J+T Header.png" alt="Jeanine + Timo Logo" class="mx-auto h-20 md:h-28 w-auto object-contain">
-            </div>
+        <!-- Datum & Locatie Stempel -->
+        <div class="inline-block bg-wine text-white text-sm md:text-base font-bold px-6 py-2.5 rounded-full uppercase tracking-wider shadow-sm mb-6">
+            Zaterdag 22 Mei 2027 • Rotterdam
+        </div>
 
-            <!-- Datum & Locatie Badge -->
-            <div class="inline-block bg-wine text-white text-sm md:text-base font-bold px-6 py-2.5 rounded-full uppercase tracking-wider shadow-md mb-6">
-                Zaterdag 22.05.2027 • Rotterdam
-            </div>
+        <!-- Hoofdboodschap / Vibe -->
+        <p class="text-base md:text-lg text-navy/80 font-light italic mb-8 max-w-lg mx-auto">
+            "They're gonna live forever"
+        </p>
 
-            <!-- Sfeervolle Quote -->
-            <p class="text-base md:text-lg text-navy/80 max-w-xl mx-auto font-light italic">
-                "They're gonna live forever"
+        <!-- Korte uitnodigende tekst -->
+        <div class="mb-8 text-navy">
+            <h2 class="text-2xl md:text-3xl font-black uppercase mb-3">
+                Save our date & pre-registreer
+            </h2>
+            <p class="text-base font-light text-navy/80 max-w-md mx-auto">
+                Onze Live Forever Show vindt plaats aan de Kralingse Plas. Voordat we de officiële line-up versturen, hebben we je postadres nodig!
             </p>
         </div>
-    </header>
 
-    <!-- MAIN CONTENT SECTION -->
-    <main class="max-w-3xl mx-auto px-4 w-full my-6 flex-grow">
-        <div class="bg-white rounded-2xl p-6 md:p-10 card-shadow border border-navy/5 text-center">
+        <!-- PRIMAIRE ACTIEKNOPPEN -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+            <!-- Link naar de Insocial survey -->
+            <a href="#SURVEY_LINK_HIER" class="w-full sm:w-auto btn-wine px-8 py-4 rounded-xl text-base uppercase tracking-wider text-center shadow-md">
+                Adres Doorgeven 🎟️
+            </a>
             
-            <h2 class="text-2xl md:text-3xl font-black text-navy mb-4">
-                Pre-registreer je aanwezigheid
-            </h2>
-            
-            <p class="text-base md:text-lg text-navy/80 mb-8 font-light max-w-md mx-auto">
-                Voordat we de officiële uitnodiging versturen, hebben we je adres nodig.
-            </p>
+            <!-- Agenda Knop -->
+            <button onclick="downloadCalendarFile()" class="w-full sm:w-auto btn-navy-outline px-6 py-4 rounded-xl text-sm uppercase tracking-wider text-center flex items-center justify-center gap-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                </svg>
+                Zet in Agenda
+            </button>
+        </div>
 
-            <!-- ACTIEKNOPPEN -->
-            <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-10">
-                <!-- Vul hier de link naar jullie Insocial survey in -->
-                <a href="#SURVEY_LINK_HIER" class="w-full sm:w-auto btn-wine px-8 py-4 rounded-xl text-lg uppercase tracking-wider text-center">
-                    Adres Doorgeven 🎟️
-                </a>
-                
-                <!-- Google / Apple Agenda Knop -->
-                <button onclick="downloadCalendarFile()" class="w-full sm:w-auto btn-navy-outline px-6 py-4 rounded-xl text-sm uppercase tracking-wider text-center flex items-center justify-center gap-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                    </svg>
-                    Zet in Agenda
-                </button>
-            </div>
-
-            <!-- COUNTDOWN TIMER -->
-            <div class="pt-6 border-t border-navy/10">
-                <p class="text-xs uppercase tracking-widest text-navy/60 font-bold mb-4">De deuren openen over:</p>
-                <div id="countdown" class="grid grid-cols-4 gap-2 max-w-sm mx-auto text-navy">
-                    <div class="bg-offwhite p-3 rounded-lg border border-navy/5">
-                        <span id="days" class="block text-2xl md:text-3xl font-black">00</span>
-                        <span class="text-[10px] uppercase font-bold text-navy/60">Dagen</span>
-                    </div>
-                    <div class="bg-offwhite p-3 rounded-lg border border-navy/5">
-                        <span id="hours" class="block text-2xl md:text-3xl font-black">00</span>
-                        <span class="text-[10px] uppercase font-bold text-navy/60">Uren</span>
-                    </div>
-                    <div class="bg-offwhite p-3 rounded-lg border border-navy/5">
-                        <span id="minutes" class="block text-2xl md:text-3xl font-black">00</span>
-                        <span class="text-[10px] uppercase font-bold text-navy/60">Minuten</span>
-                    </div>
-                    <div class="bg-offwhite p-3 rounded-lg border border-navy/5">
-                        <span id="seconds" class="block text-2xl md:text-3xl font-black">00</span>
-                        <span class="text-[10px] uppercase font-bold text-navy/60">Sec</span>
-                    </div>
+        <!-- COUNTDOWN (SUBTIEL IN DE FLOW) -->
+        <div class="pt-8 border-t border-navy/10">
+            <p class="text-xs uppercase tracking-widest text-navy/60 font-bold mb-4">De deuren openen over:</p>
+            <div id="countdown" class="grid grid-cols-4 gap-2 max-w-sm mx-auto text-navy">
+                <div class="bg-white/60 p-3 rounded-lg border border-navy/10">
+                    <span id="days" class="block text-2xl md:text-3xl font-black">00</span>
+                    <span class="text-[10px] uppercase font-bold text-navy/60">Dagen</span>
+                </div>
+                <div class="bg-white/60 p-3 rounded-lg border border-navy/10">
+                    <span id="hours" class="block text-2xl md:text-3xl font-black">00</span>
+                    <span class="text-[10px] uppercase font-bold text-navy/60">Uren</span>
+                </div>
+                <div class="bg-white/60 p-3 rounded-lg border border-navy/10">
+                    <span id="minutes" class="block text-2xl md:text-3xl font-black">00</span>
+                    <span class="text-[10px] uppercase font-bold text-navy/60">Minuten</span>
+                </div>
+                <div class="bg-white/60 p-3 rounded-lg border border-navy/10">
+                    <span id="seconds" class="block text-2xl md:text-3xl font-black">00</span>
+                    <span class="text-[10px] uppercase font-bold text-navy/60">Sec</span>
                 </div>
             </div>
-
         </div>
+
     </main>
 
-    <!-- FOOTER SECTION -->
-    <footer class="py-8 px-4 text-center text-navy/60 text-sm">
+    <!-- FOOTER -->
+    <footer class="py-6 px-4 text-center text-navy/60 text-sm">
         <p class="font-bold uppercase tracking-widest text-xs mb-1">De Serre aan de Plas • Rotterdam</p>
-        <p class="font-light italic">Mocht je vragen hebben, weet ons te vinden!</p>
+        <p class="font-light italic text-xs">Mocht je vragen hebben, weet ons te vinden!</p>
     </footer>
 
     <!-- SCRIPT FOR COUNTDOWN & CALENDAR -->
     <script>
-        // Countdown Timer naar 22 Mei 2027
         const weddingDate = new Date('May 22, 2027 19:30:00').getTime();
 
         const timer = setInterval(function() {
@@ -184,7 +173,6 @@
             }
         }, 1000);
 
-        // Download .ics Agenda Bestand
         function downloadCalendarFile() {
             const icsData = 
 `BEGIN:VCALENDAR
@@ -192,8 +180,8 @@ VERSION:2.0
 PRODID:-//Jeanine en Timo Bruiloft//NL
 BEGIN:VEVENT
 SUMMARY:Jeanine + Timo: The Live Forever Show ⚡
-DESCRIPTION:Bruiloft van Jeanine & Timo aan de Kralingse Plas!
-LOCATION:De Tuin van de Vier Windstreken, Plaszoom 354, Rotterdam
+DESCRIPTION:Save the Date voor de bruiloft van Jeanine & Timo aan de Kralingse Plas!
+LOCATION:De Tuin van de Vier Windstreken, Plaszoom 500, Rotterdam
 DTSTART:20270522T120000Z
 DTEND:20270523T000000Z
 END:VEVENT
