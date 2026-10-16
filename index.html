@@ -49,26 +49,30 @@
             background-color: #a94c49;
             color: #ffffff;
             font-weight: 700;
+            border: 2px solid #a94c49; /* Zorgt voor identieke hoogte als de blauwe knop */
             transition: all 0.2s ease-in-out;
         }
-
+        
         .btn-wine:hover {
             background-color: #8c3d3a;
+            border-color: #8c3d3a;
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(169, 76, 73, 0.25);
         }
-
+        
         .btn-navy-outline {
             background-color: #002c54;
             color: #ffffff;
             font-weight: 700;
+            border: 2px solid #002c54;
             transition: all 0.2s ease-in-out;
         }
-
+        
         .btn-navy-outline:hover {
-            background-color: #002c54;
+            background-color: #001a33; /* Donkerdere marineblauw bij hover/klik */
+            border-color: #001a33;
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 44, 84, 0.15);
+            box-shadow: 0 6px 20px rgba(0, 44, 84, 0.25);
         }
     </style>
 </head>
@@ -98,7 +102,7 @@
                 Save the date
             </h2>
             <p class="text-base font-light text-navy/80 max-w-md mx-auto">
-                It's happening! Onze Live Forever Show gaat plaatsvinden en wij willen jou erbij hebben. Voordat we de officiële kaartjes versturen, hebben we je adres nodig!
+                Het gaat gebeuren! Onze Live Forever Show gaat plaatsvinden en wij willen jou erbij hebben. Voordat we de officiële kaartjes versturen, hebben we je adres nodig!
             </p>
         </div>
 
@@ -109,12 +113,12 @@
                 Pre-register now
             </a>
             
-            <!-- Agenda Knop (Nu weer strak marineblauw omrand) -->
-            <button onclick="downloadCalendarFile()" class="w-full sm:w-auto btn-navy-outline px-6 py-4 rounded-xl text-sm uppercase tracking-wider text-center flex items-center justify-center gap-2 shadow-sm">
+            <!-- Agenda Knop -->
+            <button onclick="downloadCalendarFile()" class="w-full sm:w-auto btn-navy-outline px-8 py-4 rounded-xl text-base uppercase tracking-wider text-center flex items-center justify-center gap-2 shadow-md">
                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 002-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                 </svg>
-                Zet in je Agenda
+                Add to Calendar
             </button>
         </div>
 
